@@ -14,6 +14,9 @@ var read = function( filepath ) {
 	// and pass it into read() as filepath
 	var path = filepath || this.state.path
 
+	// Process only ".styl" files
+	if (path.split('.').pop() !== "styl") return
+
 	// if nothing passed in, default to linting the curr dir
 	// here we get all the files to parse first, then we pass to app.parse
 	if ( path === process.cwd() ) {
