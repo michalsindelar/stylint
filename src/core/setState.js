@@ -13,8 +13,8 @@ var emptyLineRe = /\S/
 var setState = function( line ) {
 	this.state.context = this.setContext( this.cache.line )
 
-	// ignore the current line if @stylint ignore
-	if ( this.cache.origLine.indexOf( '@stylint ignore' ) !== -1 ) {
+	// ignore the current line if @stylint ignore || stylint-disable-line
+	if ( this.cache.origLine.indexOf( '@stylint ignore' ) !== -1 || this.cache.origLine.indexOf( 'stylint-disable-line' ) !== -1 ) {
 		return
 	}
 
