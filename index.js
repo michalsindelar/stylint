@@ -26,6 +26,7 @@ var Stylint = function( path, config, callback ) {
 	return stampit().compose(
 		require( './src/core/' ),
 		require( './src/checks/' ),
+		require( './src/checksFile/' ),
 		require( './src/state/' ),
 		stampit().enclose( function() {
 			var pkg = null

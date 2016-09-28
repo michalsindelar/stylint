@@ -32,7 +32,7 @@ var linterMethods = stampit().methods( {
 		valid: require( './valid' ),
 		zeroUnits: require( './zeroUnits' ),
 		zIndexNormalize: require( './zIndexNormalize' )
-	}
+	},
 } )
 
 module.exports = linterMethods

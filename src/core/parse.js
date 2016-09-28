@@ -26,6 +26,9 @@ var parse = function( err, res ) {
 			return ( new Array( str.split( lineEndingsRe ).length ) ).join( '\n' )
 		} ).split( '\n' )
 
+		// Whole file checks
+		this.lintFile( file )
+
 		// updating cache as we go, and passing to the next step
 		lines.forEach( function( line, lineNo ) {
 			this.cache.origLine = line
@@ -33,6 +36,7 @@ var parse = function( err, res ) {
 			this.cache.lineNo = lineNo + 1 // line nos don't start at 0
 			this.cache.rule = ''
 			this.cache.col = null
+
 			return this.setState( line )
 		}.bind( this ) )
 
